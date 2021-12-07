@@ -1,54 +1,153 @@
-import React, { useState, useEffect } from 'react';
-import DetailsItem from './DetailsItem';
+import React from "react";
+import { Link } from 'react-router-dom';
+import sofa from '../Image/sofa2.jpg'
+import sofaa from '../Image/sofa3.jpg'
+import sofaaa from '../Image/sofa4.jpg'
 
 const Details = () => {
-    const [details, setDetails] = useState([]);
-    const [text, setText] = useState('');
+    return (
+        <div className="container">
+            <div className="row">
 
-    useEffect(() => {
+                {/* card 1 */}
+                <div className="col-lg-4  ">
+                    <div className="Rounded my-5 shadow">
+                        <div className="d-flex">
+
+                            <div className="p-2 flex-fill opacity-50 m-3">
+                                <h5><span class="badge bg-secondary text-dark-50">NEW</span></h5>
+                            </div>
+
+                            <div className="dropdown p-2 flex-fill text-secondary text-end m-3">
+                                <Link className="navbar-brand text-secondary " to="/"> <i class="fa fa-heart-o"></i></Link>
+                                <Link className="navbar-brand text-secondary m-2" to="/"><i class="fa fa-list"></i></Link>
+                            </div>
+
+                        </div>
+
+                        <div className="text-center">
+                            <img src={sofaa} alt="sofa"/>
+                            <h5 className="text-secondary">Wooden Chair</h5>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="m-4 text-center">
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6">
+                                <div className="text-center m-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Rp 12.000" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                        <span class="input-group-text" id="basic-addon2"><i className=" fa fa-shopping-cart"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
 
-    fetch('https://api.tvmaze.com/search/shows?q=avengers')
-    .then(response => response.json())
-    .then(data => setDetails(data));
-        // eslint-disable-next-line
-    }, []);
+                {/* card 2 */}
+                <div className="col-lg-4 ">
+                <div className="Rounded my-5 shadow">
+                        <div className="d-flex">
 
-    const  handleSubmit = (e) => {
-        e.preventDefault();
+                            <div className="p-2 flex-fill opacity-50 m-3">
+                                <h5><span class="badge bg-secondary text-dark-50">NEW</span></h5>
+                            </div>
 
-        fetch(`https://api.tvmaze.com/search/shows?q=${text}`)
-        .then(response => response.json())
-        .then(data => setDetails(data));
+                            <div className="dropdown p-2 flex-fill text-secondary text-end m-3">
+                                <Link className="navbar-brand text-secondary " to="/"> <i class="fa fa-heart-o"></i></Link>
+                                <Link className="navbar-brand text-secondary m-2" to="/"><i class="fa fa-list"></i></Link>
+                            </div>
 
-        setText('');
-      }
+                        </div>
 
-    const handleChange = (e) => {setText(e.target.value)};
+                        <div className="text-center">
+                            <img src={sofaaa} alt="sofa"/>
+                            <h5 className="text-secondary">Wooden Chair</h5>
+                        </div>
 
-    return(
-        <section className="py-5">
-        <div className="container px-4 px-lg-5 mt-5">
-            <h2 className="text-center">Search</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" className="form-control" placeholder="Search..." onChange={handleChange} value={text} />
-            </form>
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="m-4 text-center">
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                </div>
+                            </div>
 
-            <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center my-5">
+                            <div className="col-lg-6">
+                                <div className="text-center m-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Rp 12.000" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                        <span class="input-group-text" id="basic-addon2"><i className=" fa fa-shopping-cart"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
 
-            { details.map(detail => <DetailsItem key={detail.id} detail={detail} /> ) }
+                {/* card 3 */}
+                <div className="col-lg-4  ">
+                <div className="Rounded my-5 shadow">
+                        <div className="d-flex">
 
-                {/* <DetailsItems />
-                <DetailsItems />
-                <DetailsItems />
-                <DetailsItems />
-                <DetailsItems />
-                <DetailsItems /> */}
+                            <div className="p-2 flex-fill opacity-50 m-3">
+                                <h5><span class="badge bg-secondary text-dark-50">NEW</span></h5>
+                            </div>
+
+                            <div className="dropdown p-2 flex-fill text-secondary text-end m-3">
+                                <Link className="navbar-brand text-secondary " to="/"> <i class="fa fa-heart-o"></i></Link>
+                                <Link className="navbar-brand text-secondary m-2" to="/"><i class="fa fa-list"></i></Link>
+                            </div>
+
+                        </div>
+
+                        <div className="text-center">
+                            <img src={sofa} alt="sofa"/>
+                            <h5 className="text-secondary">Wooden Chair</h5>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="m-4 text-center">
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                    <span><i class="fa fa-star-o"></i></span>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-6">
+                                <div className="text-center m-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Rp 12.000" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                        <span class="input-group-text" id="basic-addon2"><i className=" fa fa-shopping-cart"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
-
     );
 }
 
